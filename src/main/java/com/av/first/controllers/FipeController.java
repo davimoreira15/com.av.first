@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.av.first.services.FipeService;
 
-// Anotação que indica que esta classe é um controlador REST
+
 @RestController
 public class FipeController {
 
-    // Injeção de dependência do serviço FipeService
+    
     @Autowired
     private FipeService fipeService;
 
-    // Endpoint para consultar marcas
+   
     @GetMapping("/consultarMarcas")
     public String consultarMarcas() {
         // Chama o método consultarMarcas do serviço FipeService
         return fipeService.consultarMarcas();
     }
 
-    // Endpoint para consultar modelos de uma marca específica
+    
     @GetMapping("/consultarModelos/{marca}")
     public String consultarModelos(@PathVariable int marca) {
         // Chama o método consultarModelos do serviço FipeService, passando a marca como parâmetro
